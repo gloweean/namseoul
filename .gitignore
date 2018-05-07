@@ -1,6 +1,7 @@
 ### custom ###
 .DS_Store
 .config_secret
+.media
 .idea
 
 # Created by https://www.gitignore.io/api/macos,python,django,pycharm
