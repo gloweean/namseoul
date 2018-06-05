@@ -4,7 +4,7 @@
 
 ## Database
 
-* For local esther_mb4
+* For local namseoul_mb4
 
     ```sql
     CREATE DATABASE namseoul_mb4
