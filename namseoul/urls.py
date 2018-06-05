@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from message import views
+from rest_framework import routers
+
+# ViewSet을 사용할 경우 router를 지정해주어야 한다.
+router = routers.DefaultRouter()
+router.register(r'message', views.MessageViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('message/', views.main_list)
+    path('', include(router.urls)),
 ]
