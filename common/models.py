@@ -9,6 +9,10 @@ def validate_max_chapter(value):
 
 
 class Bible(models.Model):
+    def __str__(self):
+        title = '{} {}장 {}절 - {}'.format(self.testament_kr_code, self.chapter, self.verse, self.contents)
+        return title
+    
     testament_name = models.CharField(max_length=100, blank=True, null=True, verbose_name='성서 이름')
     testament_kr_code = models.CharField(max_length=50, blank=True, null=True, verbose_name='성서 약어')
     order = models.IntegerField(blank=True, null=True, validators=[validate_max_chapter], verbose_name='성서 번호')
