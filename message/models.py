@@ -3,6 +3,9 @@ from common.models import Bible
 
 
 class Message(models.Model):
+    def __str__(self):
+        name = '{}_{}_{}_{}'.format(self.date, self.kindness, self.title, self.testament_full_text)
+        return name
     title = models.CharField(max_length=100, blank=True, null=True, verbose_name='강단주제')
     date = models.DateField(blank=True, null=True, verbose_name='날짜')
     kindness = models.CharField(max_length=100, blank=True, null=True, verbose_name='예배종류')
