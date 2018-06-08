@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from message import views
 from rest_framework import routers
+from rest_framework.authtoken import views as AuthView
+from member.views import UserLogoutView
 
 # ViewSet을 사용할 경우 router를 지정해주어야 한다.
 router = routers.DefaultRouter()
@@ -25,4 +27,6 @@ router.register(r'message', views.MessageViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('auth', AuthView.obtain_auth_token),  # 이후 요청부터는 Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b 형식으로 request header에 넣어서 요청을 보내야 한다.
+    path('logout', UserLogoutView.as_view()),
 ]
