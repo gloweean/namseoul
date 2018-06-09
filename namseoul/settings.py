@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
-import os
 import json
+import os
 
 AUTH_USER_MODEL = 'member.MyUser'
 
@@ -182,6 +182,16 @@ REST_FRAMEWORK = {
     'TEST_REQUEST_RENDERER_CLASSES': (
         'rest_framework.renderers.MultiPartRenderer',
         'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.TemplateHTMLRenderer'
+        'rest_framework.renderers.TemplateHTMLRenderer',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     )
 }
+
+# global variables
+GENDER_CHOICE = (
+    ('MALE', '남자'),
+    ('FEMALE', '여자'),
+    ('OTHER', '기타'),
+)
