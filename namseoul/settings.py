@@ -37,7 +37,7 @@ SECRET_KEY = config_secret_common['django_secret_key']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(config_secret_common['is_debug'])
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['beta.reawein.com', ]
 
 if DEBUG:
     ALLOWED_HOSTS.append('localhost')
