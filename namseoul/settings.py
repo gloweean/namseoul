@@ -148,7 +148,7 @@ STATICFILES_DIRS = [
     os.path.join(ROOT_DIR, 'static'),
 ]
 
-# log
+# log - SQL
 LOGGING = {
     'version': 1,
     'filters': {
