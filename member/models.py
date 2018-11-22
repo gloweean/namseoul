@@ -56,6 +56,8 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     gender = models.CharField(max_length=10, choices=settings.GENDER_CHOICE, default='OTHER')
     first_name = models.CharField(max_length=100, blank=True, null=True)
     last_name = models.CharField(max_length=100, blank=True, null=True)
+    birthday = models.DateField(blank=True, null=True)
+    date_joined = models.DateField(auto_now=True, blank=True, null=True)
 
     USERNAME_FIELD = 'email'
     objects = CustomUserManager()
