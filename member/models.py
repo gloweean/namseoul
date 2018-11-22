@@ -37,7 +37,7 @@ class CustomUserManager(BaseUserManager):
 
 class MyUser(AbstractBaseUser, PermissionsMixin):
 
-    email = models.EmailField(unique=True, null=True)
+    email = models.EmailField(max_length=191, unique=True, null=True)  #  191*4 = 764  less than 767 bytes regulation in MySQL
     username = models.CharField(max_length=100, blank=True, null=True)
     
     is_staff = models.BooleanField(
