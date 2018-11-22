@@ -57,7 +57,7 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=100, blank=True, null=True)
     last_name = models.CharField(max_length=100, blank=True, null=True)
     birthday = models.DateField(blank=True, null=True)
-    date_joined = models.DateField(auto_now=True, blank=True, null=True)
+    date_joined = models.DateField(auto_now_add=True, blank=True, null=True)
 
     USERNAME_FIELD = 'email'
     objects = CustomUserManager()
@@ -70,4 +70,4 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     
     def get_short_name(self):
         return self.email
-    
+
